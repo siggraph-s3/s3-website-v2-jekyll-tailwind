@@ -19,14 +19,14 @@
       {% for item in site.data.navbar %}
       {% if item.url == page.dir %}
       {% assign class = "active" %}
-  {% else %}
+      {% else %}
       {% assign class = "normal" %}
-  {% endif %}
+      {% endif %}
               
       {% if item.subfolderitems %}
       <!--Hoverable Link-->
       <li class="hoverable hover:bg-blue-800 hover:text-white">
-        <a href="#" class="relative block py-6 px-4 lg:p-6 text-sm lg:text-base font-bold hover:bg-blue-800 hover:text-white">{{ item.name }}</a>
+        <a href="{{ item.url }}" class="relative block py-6 px-4 lg:p-6 text-sm lg:text-base font-bold hover:bg-blue-800 hover:text-white">{{ item.name }}</a>
         <div class="p-6 mega-menu mb-16 sm:mb-0 shadow-xl bg-blue-800">
           <div class="container mx-auto w-full flex flex-wrap justify-between mx-2">
             {% if entry.heading or entry.message %}
@@ -41,8 +41,9 @@
             {% endif %}
 
             {% for entry in item.subfolderitems %}
-            {% if forloop.last %}
-            <ul class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 pb-6 pt-6 lg:pt-3">
+            
+            {% if forloop.first == true %}
+            <ul class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 lg:border-b-0 pb-6 pt-6 lg:pt-3">
               <div class="flex items-center">
                 <svg class="h-8 mb-3 mr-3 fill-current text-white"
                   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -50,7 +51,9 @@
                 </svg>
                 <h3 class="font-bold text-xl text-white text-bold mb-2">{{ entry.name }}</h3>
               </div>
-              <p class="text-gray-100 text-sm">This is a no-brainer to wash your face, or we need to future-proof this high performance keywords granularity.</p>
+              {% if entry.description %}
+              <p class="text-gray-100 text-sm">{{ entry.description }} first-{{ forloop.index }}</p>
+              {% endif %}
               <div class="flex items-center py-3">
                 <svg class="h-6 pr-3 fill-current text-blue-300"
                   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -62,16 +65,17 @@
 
             {% else %}
             
-            <ul class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3">
-              <div class="flex items-center">
+            <ul class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r-0 lg:border-l lg:border-b-0 pb-6 pt-6 lg:pt-3">
+              <div class="flex">
                 <svg class="h-8 mb-3 mr-3 fill-current text-white"
                   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                   <path d="M3 6c0-1.1.9-2 2-2h8l4-4h2v16h-2l-4-4H5a2 2 0 0 1-2-2H1V6h2zm8 9v5H8l-1.67-5H5v-2h8v2h-2z"/>
                 </svg>
                 <h3 class="font-bold text-xl text-white text-bold mb-2">{{ entry.name }}</h3>
               </div>
-              
-              <p class="text-gray-100 text-sm">Quarterly sales are at an all-time low create spaces to explore the accountable talk and blind vampires.</p>
+              {% if entry.description %}
+              <p class="text-gray-100 text-sm">{{ entry.description }} middle-{{ forloop.index }}</p>
+              {% endif %}
               <div class="flex items-center py-3">
                 <svg class="h-6 pr-3 fill-current text-blue-300"
                   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -95,22 +99,6 @@
         {% endif %}
       {% endfor %}
           
-      
-      
-        
     </ul>
   </div>
 </nav>
-
-<!-- <nav id="site-menu" class="flex flex-col sm:flex-row w-full justify-between items-center px-4 sm:px-6 py-1 bg-white shadow sm:shadow-none border-t-4 border-red-900">
-  <div class="w-full sm:w-auto self-start sm:self-center flex flex-row sm:flex-none flex-no-wrap justify-between items-center">
-    <a href="#" class="no-underline py-1"><h1 class="font-bold text-lg tracking-widest">LOGO</h1></a>
-    <button id="menuBtn" class="hamburger block sm:hidden focus:outline-none" type="button" onclick="navToggle();">
-      <span class="hamburger__top-bun"></span><span class="hamburger__bottom-bun"></span>
-    </button>
-  </div>
-  <div id="menu" class="w-full sm:w-auto self-end sm:self-center sm:flex flex-col sm:flex-row items-center h-full py-1 pb-4 sm:py-0 sm:pb-0 hidden">
-    <a class="text-dark font-bold hover:text-red text-lg w-full no-underline sm:w-auto sm:pr-4 py-2 sm:py-1 sm:pt-2" href="https://ttntm.me/blog/tailwind-responsive-menu/" target="_blank">About</a>
-    <a class="text-dark font-bold hover:text-red text-lg w-full no-underline sm:w-auto sm:px-4 py-2 sm:py-1 sm:pt-2" href="#bottom">Features</a>
-  </div>
-</nav> -->
