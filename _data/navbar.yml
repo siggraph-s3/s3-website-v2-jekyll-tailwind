@@ -1,0 +1,44 @@
+- url: /
+  name: Home
+- url: /programs/
+  name: Programs
+  subfolderitems:
+    - name: s3r3
+      url: /s3r3
+    - name: Webinars
+      url: /webinars
+    - name: XSV
+      url: /xsv
+    - name: MentorMe
+      url: /mentorme
+- url: /events/
+  name: Events
+- url: /industry-career/
+  name: Industry & Career
+  subfolderitems:
+    - name: Job postings
+      url: /job-postings
+    - name: News
+      url: /news
+- url: /education/
+  name: Education
+  subfolderitems:
+    - name: Reference Guides and texts
+      url: /reference-guides-texts
+    - name: Youtube Playlists
+      url: /youtube-playlists
+    - name: Webinars
+      url: /webinars
+- url: /community/
+  name: Community
+  subfolderitems:
+  - name: Discord
+    url: /discord
+  - name: Facebook Groups
+    url: /facebook-groups
+  - name: ACM SIGGRAPH Committees
+    url: /acm-siggraph-committees
+  - url: /siggraph-conference/
+    name: SIGGRAPH Conference
+# - url: /team/
+#   name: Team
