@@ -5,7 +5,7 @@
       <span class="hamburger__top-bun"></span><span class="hamburger__bottom-bun"></span>
     </button>
   </div>
-  <div id="menu" class="w-full sm:w-auto self-end sm:self-center sm:flex flex-col sm:flex-row items-center h-full py-1 pb-4 sm:py-0 sm:pb-0 hidden">
+  <div id="menu" class="w-full sm:hidden md:block sm:w-auto self-end sm:self-center sm:flex flex-col sm:flex-row items-center h-full py-1 pb-4 sm:py-0 sm:pb-0 hidden">
 
     <ul class="flex">
 	
@@ -99,6 +99,24 @@
         {% endif %}
       {% endfor %}
           
+    </ul>
+  </div>
+
+
+  <div class="w-full flex-grow  lg:items-center sm:w-auto hidden  pt-6" id="nav-content">
+    <ul class="list-reset lg:flex justify-end flex-1 items-center">
+      <li class="mr-3">
+        <a class="inline-block py-2 px-4 text-white no-underline" href="#">Active</a>
+      </li>
+      <li class="mr-3">
+        <a class="inline-block text-grey-dark no-underline hover:text-grey-lighter hover:text-underline py-2 px-4" href="#">link</a>
+      </li>
+      <li class="mr-3">
+        <a class="inline-block text-grey-dark no-underline hover:text-grey-lighter hover:text-underline py-2 px-4" href="#">link</a>
+      </li>
+      <li class="mr-3">
+        <a class="inline-block text-grey-dark no-underline hover:text-grey-lighter hover:text-underline py-2 px-4" href="#">link</a>
+      </li>
     </ul>
   </div>
 </nav>

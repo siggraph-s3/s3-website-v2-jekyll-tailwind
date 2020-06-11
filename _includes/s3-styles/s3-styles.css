@@ -1,0 +1,51 @@
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  /* 
+  Note: you can also do this with Tailwind's group-hover. Unfortunately Tailwind CDN version does not include this variant, so you will have to adjust the tailwind.config.js file in your own project.
+  
+  Example with group-hover: https://codesandbox.io/s/tailwind-dropdown-with-group-hover-gm9k9
+   */
+
+
+   
+
+   h1 {
+  font-size: 36px;
+  line-height: 40px;
+}
+
+h2 {
+    font-size: 30px;
+    line-height: 40px;
+}
+
+h3 {
+    font-size: 24px;
+    line-height: 40px;
+}
+
+h4 {
+    font-size: 18px;
+    line-height: 20px;
+}
+
+/* Won't be used here */
+
+h5 {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+h6 {
+    font-size: 12px;
+    line-height: 20px;
+}
+.long-text p {
+    padding-top: 1rem;
+}
+h1,h2,h3,h4,h5,h6 {
+    padding-top: 1rem
+   }

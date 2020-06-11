@@ -1,5 +1,5 @@
 ---
-layout: collection-item
+layout: long-text
 title: Webinars
 enable-header: true
 ---

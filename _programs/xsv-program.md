@@ -1,5 +1,5 @@
 ---
-layout: collection-item
+layout: long-text
 title: XSV Program
 enable-header: true
 application-link: https://forms.gle/bAH5Dxb1nZCt2Ugx9

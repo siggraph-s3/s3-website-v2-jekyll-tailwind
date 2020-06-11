@@ -8,6 +8,8 @@ enable-banner: true
         {% for program in items %}
         {% capture program_url %}{{ program.url | prepend: site.baseurl }}{% endcapture %}
         {% capture program_content %}{{ program.content | truncate: 140 }}{% endcapture %}
+        {% capture program_image_url %}{{ program.image | prepend: site.baseurl }}{% endcapture %}
+        {% capture program_image_alt %}{{ program.image_alt }}{% endcapture %}
         {% capture program_title %}{{ program.title }}{% endcapture %}
-            {% include card-tailwindcss.html content=program_content url=program_url title=program_title %}
+            {% include card-tailwindcss.html content=program_content url=program_url title=program_title image_alt=program_image_alt image_url=program_image_url %}
         {% endfor %}

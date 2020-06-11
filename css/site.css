@@ -7,8 +7,8 @@
 @import "_includes/syntax";
 
 /* Write your styles below this line. */
-@import "_includes/custom-styles/menu";
-@import "_includes/custom-styles/s3-styles";
+@import "_includes/s3-styles/menu";
+@import "_includes/s3-styles/s3-styles";
 /* Write your styles above this line. */
 
 @tailwind utilities;
