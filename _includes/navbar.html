@@ -1,6 +1,12 @@
-<nav class="relative bg-white border-b-2 border-gray-300 text-gray-900">
-  <div class="container mx-auto flex justify-between">
-    <div class="relative block p-4 lg:p-6 text-xl text-blue-600 font-bold">Logo</div>
+<nav id="site-menu" class="flex flex-col sm:flex-row w-full justify-between items-center px-4 sm:px-6 py-1 bg-white shadow sm:shadow-none border-t-4 border-red-900">
+  <div class="w-full sm:w-auto self-start sm:self-center flex flex-row sm:flex-none flex-no-wrap justify-between items-center">
+    <a href="#" class="no-underline py-1"><h1 class="font-bold text-lg tracking-widest">LOGO</h1></a>
+    <button id="menuBtn" class="hamburger block sm:hidden focus:outline-none" type="button" onclick="navToggle();">
+      <span class="hamburger__top-bun"></span><span class="hamburger__bottom-bun"></span>
+    </button>
+  </div>
+  <div id="menu" class="w-full sm:w-auto self-end sm:self-center sm:flex flex-col sm:flex-row items-center h-full py-1 pb-4 sm:py-0 sm:pb-0 hidden">
+
     <ul class="flex">
 	
       <!--Regular Link-->
@@ -23,11 +29,39 @@
         <a href="#" class="relative block py-6 px-4 lg:p-6 text-sm lg:text-base font-bold hover:bg-blue-800 hover:text-white">{{ item.name }}</a>
         <div class="p-6 mega-menu mb-16 sm:mb-0 shadow-xl bg-blue-800">
           <div class="container mx-auto w-full flex flex-wrap justify-between mx-2">
+            {% if entry.heading or entry.message %}
             <div class="w-full text-white mb-8">
+              {% if entry.heading %}
               <h2 class="font-bold text-2xl">Main Hero Message for the menu section</h2>
+              {% endif %}
+              {% if entry.message %}
               <p>Sub-hero message, not too long and not too short. Make it just right!</p>
+              {% endif %}
             </div>
+            {% endif %}
+
             {% for entry in item.subfolderitems %}
+            {% if forloop.last %}
+            <ul class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 pb-6 pt-6 lg:pt-3">
+              <div class="flex items-center">
+                <svg class="h-8 mb-3 mr-3 fill-current text-white"
+                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <path d="M9 12H1v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6h-8v2H9v-2zm0-1H0V5c0-1.1.9-2 2-2h4V2a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1h4a2 2 0 0 1 2 2v6h-9V9H9v2zm3-8V2H8v1h4z"/>
+                </svg>
+                <h3 class="font-bold text-xl text-white text-bold mb-2">{{ entry.name }}</h3>
+              </div>
+              <p class="text-gray-100 text-sm">This is a no-brainer to wash your face, or we need to future-proof this high performance keywords granularity.</p>
+              <div class="flex items-center py-3">
+                <svg class="h-6 pr-3 fill-current text-blue-300"
+                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <path d="M20 10a10 10 0 1 1-20 0 10 10 0 0 1 20 0zm-2 0a8 8 0 1 0-16 0 8 8 0 0 0 16 0zm-8 2H5V8h5V5l5 5-5 5v-3z"/>
+                </svg>
+                <a href="{{ site.baseurl }}{{ entry.url }}" class="text-white bold border-b-2 border-blue-300 hover:text-blue-300">Find out more...</a>
+              </div>
+            </ul>
+
+            {% else %}
+            
             <ul class="px-4 w-full sm:w-1/2 lg:w-1/4 border-gray-600 border-b sm:border-r lg:border-b-0 pb-6 pt-6 lg:pt-3">
               <div class="flex items-center">
                 <svg class="h-8 mb-3 mr-3 fill-current text-white"
@@ -43,9 +77,10 @@
                   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                   <path d="M20 10a10 10 0 1 1-20 0 10 10 0 0 1 20 0zm-2 0a8 8 0 1 0-16 0 8 8 0 0 0 16 0zm-8 2H5V8h5V5l5 5-5 5v-3z"/>
                 </svg>
-                <a href="#" class="text-white bold border-b-2 border-blue-300 hover:text-blue-300">Find out more...</a>
+                <a href="{{ site.baseurl }}{{ entry.url }}" class="text-white bold border-b-2 border-blue-300 hover:text-blue-300">Find out more...</a>
               </div>
             </ul>
+            {% endif %}
             {% endfor %}
 
           </div>
@@ -55,7 +90,7 @@
                 
         {% else %}
         <li class="hover:bg-blue-800 hover:text-white">
-          <a href="#" class="relative block py-6 px-2 lg:p-6 text-sm lg:text-base font-bold">{{ item.name }}</a>
+          <a href="{{ site.baseurl }}{{ item.url }}" class="relative block py-6 px-2 lg:p-6 text-sm lg:text-base font-bold">{{ item.name }}</a>
         </li>
         {% endif %}
       {% endfor %}
@@ -67,5 +102,15 @@
   </div>
 </nav>
 
-
-   
+<!-- <nav id="site-menu" class="flex flex-col sm:flex-row w-full justify-between items-center px-4 sm:px-6 py-1 bg-white shadow sm:shadow-none border-t-4 border-red-900">
+  <div class="w-full sm:w-auto self-start sm:self-center flex flex-row sm:flex-none flex-no-wrap justify-between items-center">
+    <a href="#" class="no-underline py-1"><h1 class="font-bold text-lg tracking-widest">LOGO</h1></a>
+    <button id="menuBtn" class="hamburger block sm:hidden focus:outline-none" type="button" onclick="navToggle();">
+      <span class="hamburger__top-bun"></span><span class="hamburger__bottom-bun"></span>
+    </button>
+  </div>
+  <div id="menu" class="w-full sm:w-auto self-end sm:self-center sm:flex flex-col sm:flex-row items-center h-full py-1 pb-4 sm:py-0 sm:pb-0 hidden">
+    <a class="text-dark font-bold hover:text-red text-lg w-full no-underline sm:w-auto sm:pr-4 py-2 sm:py-1 sm:pt-2" href="https://ttntm.me/blog/tailwind-responsive-menu/" target="_blank">About</a>
+    <a class="text-dark font-bold hover:text-red text-lg w-full no-underline sm:w-auto sm:px-4 py-2 sm:py-1 sm:pt-2" href="#bottom">Features</a>
+  </div>
+</nav> -->

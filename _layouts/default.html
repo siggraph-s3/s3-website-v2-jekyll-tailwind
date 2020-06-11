@@ -10,7 +10,7 @@
     <section>
       {{ content }}
     </section>
-
+    {% include scripts.html %}
     {% if jekyll.environment == 'production' %}
       {% include analytics.html %}
     {% endif %}

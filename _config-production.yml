@@ -55,3 +55,12 @@ social:
 site_name:          S3
 site_copyright:     Copyright (c) 2020
 site_url:           http://www.s3.siggraph.org/
+
+# Collections 
+collections:
+  programs:
+    output: true
+  events:
+    output: true
+  team:
+    output: true

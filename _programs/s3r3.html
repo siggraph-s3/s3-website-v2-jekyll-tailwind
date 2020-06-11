@@ -1,0 +1,85 @@
+---
+layout: collection-item
+title: S3 Resume and Reel Review (S3R3)
+enable-header: true
+####### Signup tabs configuration
+close-date: April 16th, 2018
+### Eable all signup tabs
+signup-tabs: true
+### Form links
+onsite-signup-form: "https://airtable.com/embed/shrpAoCe9VLSHhaCx?backgroundColor=cyan"
+onlinestudent-signup-form: 
+reviewer-signup-form: "https://airtable.com/embed/shrGcNBNh0JcXtUOb?backgroundColor=cyan"
+### Labels
+onsite-signup-tab: "Students Sign-up"
+onlinestudent-signup-tab: "Winter 2020 Virtual Review Sign-up"
+reviewer-signup-tab: "Reviewers-only Sign-up"
+### Enabled Tabs (be sure to match enabled tabs with active tabs)
+onsite-tab-enabled: false
+onlinestudent-tab-enabled: false
+reviewer-tab-enabled: true
+### Active tabs (1 active at a time, should match with active tabs above)
+onsite-tab-active: false
+onlinestudent-tab-active: false
+reviewer-tab-active: true
+### Tab size class: (set to 'thirds' if three tabs are enabled, otherwise nothing)
+tab-size: '' #thirds
+---
+<p>S3R3 is the S3 Resume and Reel Review program where students and emerging professionals with less than 3 years’ experience have their resume or reel reviewed by industry professionals. This is conducted either virtually or in-person at the SIGGRAPH and SIGGRAPH Asia Conferences in 20-minute sessions. Reviewers assess students’ work and offer tips to improve the chances of finding work within the computer graphics industry. Students are matched to industry professionals based on their desired work field and job skills and provide their resume and/or reel for review and expert advice. S3 provides four S3R3 sessions throughout the year during the Winter (virtual), Spring (virtual), Summer (at SIGGRAPH), and Fall (at SIGGRAPH Asia and virtual). Some example categories for students to choose from to have their work/resumes reviewed are not limited to but include the following:</p>
+
+<ul>
+    <li>Art/Animation (experience in modeling, texturing, compositing, animation, etc.)</li>
+    <li>Production/Design (experience brainstorming ideas and transforming creative vision into reality)</li>
+    <li>Technical Art (experience in hybrid/ equal parts programming and art: rigging, scripting, shader
+      writing, etc.)</li>
+    <li>Technical Development (experience in strictly technical aspects such as programming,
+      rendering, robotics, engineering, etc.)</li>
+    <li>Management (experience in producing, production assistant coordinating production and
+      managerial aspects)</li>
+</ul>
+<hr>
+{% if page.signup-tabs == true %}
+<h2>Sign-ups open!</h2>
+  {%- capture onlinestudent-signup-form -%}
+  {{- page.onlinestudent-signup-form -}}
+  {%- endcapture -%}
+  {%- capture onsite-signup-form -%}
+  {{- page.onsite-signup-form -}}
+  {%- endcapture -%}
+  {%- capture reviewer-signup-form -%}
+  {{- page.reviewer-signup-form -}}
+  {%- endcapture -%}
+  {%- capture onlinestudent-signup-tab -%}
+  {{- page.onlinestudent-signup-tab -}}
+  {%- endcapture -%}
+  {%- capture reviewer-signup-tab -%}
+  {{- page.reviewer-signup-tab -}}
+  {%- endcapture -%}
+  {%- capture onsite-signup-tab -%}
+  {{- page.onsite-signup-tab -}}
+  {%- endcapture -%}
+  {%- capture onsite-tab-enabled -%}
+  {{- page.onsite-tab-enabled -}}
+  {%- endcapture -%}
+  {%- capture onlinestudent-tab-enabled -%}
+  {{- page.onlinestudent-tab-enabled -}}
+  {%- endcapture -%}
+  {%- capture reviewer-tab-enabled -%}
+  {{- page.reviewer-tab-enabled -}}
+  {%- endcapture -%}
+  {%- capture onsite-tab-active -%}
+  {{- page.onsite-tab-active -}}
+  {%- endcapture -%}
+  {%- capture onlinestudent-tab-active -%}
+  {{- page.onlinestudent-tab-active -}}
+  {%- endcapture -%}
+  {%- capture reviewer-tab-active -%}
+  {{- page.reviewer-tab-active -}}
+  {%- endcapture -%}
+  {%- capture tab-size -%}
+  {{- page.tab-size -}}
+  {%- endcapture -%}
+  {%- include s3r3-tabs.html tab-size=tab-size reviewer-tab-active=reviewer-tab-active onsite-tab-active=onsite-tab-active onlinestudent-tab-active=onlinestudent-tab-active onlinestudent-tab-enabled=onlinestudent-tab-enabled reviewer-tab-enabled=reviewer-tab-enabled onsite-tab-enabled=onsite-tab-enabled onsite-tab=onsite-signup-tab reviewer-tab=reviewer-signup-tab onlinestudent-tab=onlinestudent-signup-tab onlinestudent-signup=onlinestudent-signup-form onsite-signup=onsite-signup-form reviewer-signup=reviewer-signup-form -%}
+{% else %}
+<h2>Sign-ups are closed. Check back soon!</h2>
+  {% endif%}

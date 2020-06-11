@@ -1,44 +1,44 @@
-- url: /
-  name: Home
-- url: /programs/
-  name: Programs
+- name: Home
+  url: /
+- name: Programs
+  url: /programs/
   subfolderitems:
     - name: s3r3
-      url: /s3r3
+      url: /programs/s3r3/
     - name: Webinars
-      url: /webinars
+      url: /programs/webinars/
     - name: XSV
-      url: /xsv
+      url: /programs/xsv-program/
     - name: MentorMe
-      url: /mentorme
-- url: /events/
-  name: Events
-- url: /industry-career/
-  name: Industry & Career
+      url: /programs/mentor-me/
+- name: Events
+  url: /events/
+- name: Industry & Career
+  url: /industry-career/
   subfolderitems:
     - name: Job postings
-      url: /job-postings
+      url: /industry-career/job-postings/
     - name: News
-      url: /news
-- url: /education/
-  name: Education
+      url: /industry-career/news
+- name: Education
+  url: /education/
   subfolderitems:
     - name: Reference Guides and texts
-      url: /reference-guides-texts
+      url: /education/eduation/reference-guides-texts
     - name: Youtube Playlists
-      url: /youtube-playlists
+      url: /education/youtube-playlists
     - name: Webinars
-      url: /webinars
-- url: /community/
-  name: Community
+      url: /education/webinars
+- name: Community
+  url: /community/
   subfolderitems:
   - name: Discord
-    url: /discord
+    url: /community/discord
   - name: Facebook Groups
-    url: /facebook-groups
+    url: /community/facebook-groups
   - name: ACM SIGGRAPH Committees
-    url: /acm-siggraph-committees
-  - url: /siggraph-conference/
-    name: SIGGRAPH Conference
-# - url: /team/
-#   name: Team
+    url: /community/acm-siggraph-committees
+  - name: SIGGRAPH Conference
+    url: /siggraph-conference/
+- name: About
+  url: /about/
