@@ -1,0 +1,39 @@
+
+{% for item in include.tab_array %}
+<div x-data="{ tab: 'foo' }">
+
+    <button :class="{ 'active': tab === '{{item.tab_title | slugify }}' }" @click="tab = '{{item.tab_title | slugify }}'">{{item.tab_title}}</button>
+    <button :class="{ 'active': tab === 'bar' }" @click="tab = 'bar'">Bar</button>
+{% endfor %}
+{% for item in include.tab_array %}
+    <div x-show="tab === '{{item.tab_title | slugify }}'">{{ item.content }}</div>
+</div>
+
+{% endfor %}
+
+
+<div x-data="{ tab: 'foo' }">
+    <nav class="flex flex-col sm:flex-row">
+        <button :class="text-gray-600 py-4 px-6 block hover:text-blue-500 focus:outline-none { 'active': tab === 'foo' }" @click="tab = 'foo'">Foo Button Title</button>
+        <button :class="text-gray-600 py-4 px-6 block hover:text-blue-500 focus:outline-none { 'active': tab === 'bar' }" @click="tab = 'bar'">Bar Buton Title</button>
+
+        
+    </nav>
+    <div x-show="tab === 'foo'">Foo tab cotnent</div>
+        <div x-show="tab === 'bar'">Bar tab cotnent</div>
+</div>
+
+
+<div class="bg-white">
+    <nav class="flex flex-col sm:flex-row">
+        <button class="text-gray-600 py-4 px-6 block hover:text-blue-500 focus:outline-none text-blue-500 border-b-2 font-medium border-blue-500">
+            Tab 1
+        </button><button class="text-gray-600 py-4 px-6 block hover:text-blue-500 focus:outline-none">
+            Tab 2
+        </button><button class="text-gray-600 py-4 px-6 block hover:text-blue-500 focus:outline-none">
+            Tab 3
+        </button><button class="text-gray-600 py-4 px-6 block hover:text-blue-500 focus:outline-none">
+            Tab 4
+        </button>
+    </nav>
+</div>

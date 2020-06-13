@@ -5,11 +5,14 @@
     {% feed_meta %}
     {% seo %}
     <link rel="stylesheet" href="/css/site.css">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
   </head>
   <body>
     <section>
       {{ content }}
     </section>
+
+    {% include footer.html %}
     {% include scripts.html %}
     {% if jekyll.environment == 'production' %}
       {% include analytics.html %}
