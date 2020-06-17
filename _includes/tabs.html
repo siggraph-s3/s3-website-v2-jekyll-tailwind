@@ -17,10 +17,9 @@
         <button :class="text-gray-600 py-4 px-6 block hover:text-blue-500 focus:outline-none { 'active': tab === 'foo' }" @click="tab = 'foo'">Foo Button Title</button>
         <button :class="text-gray-600 py-4 px-6 block hover:text-blue-500 focus:outline-none { 'active': tab === 'bar' }" @click="tab = 'bar'">Bar Buton Title</button>
 
-        
-    </nav>
-    <div x-show="tab === 'foo'">Foo tab cotnent</div>
+        <div x-show="tab === 'foo'">Foo tab cotnent</div>
         <div x-show="tab === 'bar'">Bar tab cotnent</div>
+    </nav>
 </div>
 
 

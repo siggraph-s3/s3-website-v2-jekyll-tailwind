@@ -1,0 +1,14 @@
+---
+layout: page
+---
+
+<div class="grid grid-cols-3 gap-4">
+{% if page.two-col==true %}
+  <div class="col-span-2 ...">main{{ content }}</div>
+  {% assign site.events = events %}
+  <div class="col-span-1 ...">side bar{{ page.events }}</div>
+{% endif %}
+{% if page.two-col==false %}
+  <div class="col-span-3 ...">content{{ content }}</div>
+{% endif %}
+</div>
