@@ -46,7 +46,7 @@ exclude:
 future: true
 permalink:  pretty
 url: http://www.s3.siggraph.org # the base hostname & protocol for your site
-baseurl: "/s3-website-v2-jekyll-tailwind"
+baseurl: ""
 repository: siggraph-s3/s3-website-v2-jekyll-tailwind 
 social:
   email: s3@siggraph.org
