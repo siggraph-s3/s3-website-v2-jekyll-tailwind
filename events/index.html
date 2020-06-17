@@ -8,8 +8,8 @@ enable-banner: true
 {% for event in items %}
 {% capture event_url %}{{ event.url | prepend: site.baseurl }}{% endcapture %}
 {% capture event_content %}{{ event.content | truncate: 140 }}{% endcapture %}
-{% capture event_image_url %}{{ event.img-url | prepend: site.baseurl }}{% endcapture %}
+{% capture event_image_url %}{{ event.img-url }}{% endcapture %}
 {% capture event_image_alt %}{{ event.image_alt }}{% endcapture %}
 {% capture event_title %}{{ event.title }}{% endcapture %}
-	{% include card-tailwindcss.html content=event_content url=event_url title=event_title image_alt=event_image_alt image_url=event_image_url %}
+	{% include card-tailwindcss.html content=event_content url=event_url title=event_title image_alt=event_image_alt event_image_url=event_image_url %}
 {% endfor %}
