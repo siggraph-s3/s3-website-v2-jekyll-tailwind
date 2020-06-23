@@ -2,8 +2,13 @@
 layout: card-list
 title: Events
 enable-header: true
-enable-banner: true
+header-image: /assets/img/programs-header.jpg
+#header-button: button text
+header-text: Events
+header-subtext: See what we've been up to!
+header-color: rgb(200, 200, 200, 0.7);
 ---
+
 {% assign items = site.events | sort: 'date' | reverse %}
 {% for event in items %}
 {% capture event_url %}{{ event.url | prepend: site.baseurl }}{% endcapture %}

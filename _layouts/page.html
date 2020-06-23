@@ -2,6 +2,14 @@
 layout: default
 ---
 {% include navbar.html %}
-{% include header-image.html %}
+
+{% capture header_image %}{{ page.header-image | prepend: site.baseurl }}{% endcapture %}
+{% capture header_color %}{{ page.header-color}}{% endcapture %}
+{% capture header_text %}{{ page.header-text }}{% endcapture %}
+{% capture header_subtext %}{{ page.header-subtext }}{% endcapture %}
+{% capture header_button %}{{ page.header-button }}{% endcapture %}
+{% capture header_image %}{{ page.header-image | prepend: site.baseurl }}{% endcapture %}
+{% capture header_enable %}{{ page.enable-header }}{% endcapture %}
+{% include header-image.html header_image=header_image header_enable=header_enable header_color=header_color header_text=header_text header_subtext=header_subtext header_button=header_button %}
 
 {{ content }}

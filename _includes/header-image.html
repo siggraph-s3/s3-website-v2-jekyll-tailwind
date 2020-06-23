@@ -1,12 +1,45 @@
-<div class="py-20 bg-gray-500">
-  <div class="container mx-auto px-6">
-    <h2 class="text-4xl font-bold mb-2 text-white">
-      Some text    </h2>
-    <h3 class="text-2xl mb-8 text-gray-200">
-      other text
-    </h3>
+{% if include.header_enable == 'true' and include.header_image %}
+<div class="bg-gray-500 bg-local" style="background-image: url({{ include.header_image }});">
+  <div class="py-20" {% if include.header_color %}style="background-color: {{ include.header_color }};"{% endif %}>
+    <div class="container mx-auto px-6">
+    
+      {% if include.header_text %}
+      <h2 class="text-4xl font-bold mb-2 text-white">{{ include.header_text }}</h2>
+    {% endif %}
 
-    <button class="bg-white font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider">
-      Sign up for something!    </button>
+    {% if include.header_subtext %}
+      <h3 class="text-2xl mb-8 text-gray-200">{{ include.header_subtext }}</h3>
+    {% endif %}
+      
+    {% if include.button_text %}
+      <button class="bg-white font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider">{{ include.button }}</button>
+    {% endif %}
+
+    </div>
   </div>
 </div>
+
+{% elsif include.header_enable == 'false'%}
+<!-- header disabled -->
+{% else%}
+
+<div class="py-20 bg-gray-500">
+  <div class="container mx-auto px-6">
+    {% if include.header_text %}
+
+    <h2 class="text-4xl font-bold mb-2 text-white">{{ include.header_text }}</h2>
+      {% endif %}
+
+      {% if include.header_subtext %}
+      <h3 class="text-2xl mb-8 text-gray-200">{{ include.header_subtext }}</h3>
+      {% endif %}
+      
+      {% if include.button_text %}
+    <button class="bg-white font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider">{{ include.button }}</button>
+      {% endif %}
+
+  </div>
+</div>
+{% endif %}
+
+  
